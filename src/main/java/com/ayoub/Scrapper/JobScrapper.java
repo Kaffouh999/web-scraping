@@ -1,6 +1,6 @@
 package com.ayoub.Scrapper;
 
-import com.ayoub.dao.DatabseManager;
+import com.ayoub.dao.DatabaseManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -95,7 +95,7 @@ public class JobScrapper {
                     "\nPosted Date: " + postedDate + "\n-----");
 
             // Save job data to the database
-            DatabseManager.saveJob(jobTitle, companyName, location, summary, postedDate);
+            DatabaseManager.saveJob(jobTitle, companyName, location, summary, postedDate);
         } catch (Exception e) {
             LOGGER.log(Level.WARNING, "Error processing a job listing", e);
         }

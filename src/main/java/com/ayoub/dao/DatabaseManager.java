@@ -5,11 +5,14 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class DatabseManager {
+public class DatabaseManager {
 
     private static final String URL = "jdbc:mysql://localhost:3306/JobMarket";
     private static final String USER = "root";
     private static final String PASSWORD = "";
+
+    private DatabaseManager() {
+    }
 
     public static void saveJob(String jobTitle, String companyName, String location, String summary, String postedDate) {
         String sql = "INSERT INTO JobListings (job_title, company_name, location, summary, posted_date) VALUES (?, ?, ?, ?, ?)";
